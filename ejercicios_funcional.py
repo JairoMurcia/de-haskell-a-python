@@ -120,7 +120,7 @@ def doblar(x):
     if len(x)==1:
         return [x[0]*2]
     else:
-        return [x[0]*2]+cuadrado(x[1:])   
+        return [x[0]*2]+doblar(x[1:])   
 
 def ultimo_elemento(x):
     if len(x)==1 or len(x)==0:
