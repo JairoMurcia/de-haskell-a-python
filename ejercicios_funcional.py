@@ -18,7 +18,7 @@ def suma_lista(y):
 def lista_igual(a,b):
     if len(a)==0 and len(b)==0:
         return True
-    elif a[0]==b[0]:
+    elif a[0]==b[0] and len(a)==len(b):
         return lista_igual(a[1:],b[1:])
     else:
         return False
@@ -50,16 +50,11 @@ def contar_pares(a):
     else:
         return 0+contar_pares(a[1:])
     
-def invertir_lista(a,b):
-    if len(a)==2:
-        b.append(a[0])
-        return b
-    else:
-        b.append(a[len(a)-1])
-        return invertir_lista(a[:len(a)],b)
-
-a=[1,3,5,4,3,5,8]
-b=[1]
+def invertir(x):
+	if len(x)==1:
+		return [x[0]]
+	else:
+		return [x[len(x)-1]]+invertir(x[:len(x)-1])	
 
 
-print(invertir_lista(a,[]))
+print(invertir([1,2,3,4,5,6]))	
