@@ -120,7 +120,22 @@ def invertir(ls):
     #el resultado de la misma funcion enviando la misma lista pero sin
     #ultimo valor (que ya pusimos al inicio)
     return [ls[len(ls) - 1]] + invertir(ls[:-1])
-	
+def esprimo(x,y):
+	if x/2 < y:
+		return True
+	else:
+		if x%y==0:
+			return False
+		else:
+			return esprimo(x,y+1)			
+def lista_primos(x):
+	if x==0:
+		return []
+	elif esprimo(x,2):
+		
+		return lista_primos(x-1)+[x]
+	else:
+		return lista_primos(x-1)+[]		
 
 def doblar(x):
     if len(x)==1:
