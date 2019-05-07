@@ -110,11 +110,17 @@ def contar_pares(a):
     else:
         return 0+contar_pares(a[1:])
     
-def invertir(x):
-	if len(x)==1:
-		return [x[0]]
-	else:
-		return [x[len(x)-1]]+invertir(x[:len(x)-1])	
+def invertir(ls):
+    if ls == []:
+        return null
+    
+    if len(ls) == 1: #Importante: caso base
+        return ls    #El caso base ROMPE la recursividad.
+    #Se le indica que retorne el ultimo valor de la lista, y le concatene
+    #el resultado de la misma funcion enviando la misma lista pero sin
+    #ultimo valor (que ya pusimos al inicio)
+    return [ls[len(ls) - 1]] + invertir(ls[:-1])
+	
 
 def doblar(x):
     if len(x)==1:
