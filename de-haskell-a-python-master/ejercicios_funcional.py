@@ -64,6 +64,35 @@ def invertir(ls):
 #Se envuelve cualquier resultado en [] para convertirlo en una lista.
 #ls[:-1] remueve el ultimo valor de la lista
 
+def divisible(x, y):
+	return (x%y==0)
+
+def divisibles(n):
+	listaDiv = []
+	listaY = []
+	y=1
+	while y<=n:
+		listaY.append(y)
+		y+=1
+	for i in listaY:
+		if(divisible(n,i)):
+			listaDiv.append(i)
+	return listaDiv
+
+def esPrimo(n):
+	return (len(divisibles(n))<=2)
+
+def primos(n):
+	lista = []
+	x=1
+	while x<=n:
+		if(esPrimo(x)):
+			lista.append(x)
+		x+=1
+	return lista
+
+print(primos(n=100))
+
 print(invertir([5,4,3,2,1]))
     
 os.system("pause")
